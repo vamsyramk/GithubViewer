@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="githubViewer">
 
-<head>
-  <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-  <style>
-    div.images img{
-      width:200,
-      hieght:200;
-    }
-  </style>
-</head>
+  <head>
+    <script data-require="angular.js@*" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <script data-require="angular-route@*" data-semver="1.2.14" src="https://code.angularjs.org/1.2.14/angular-route.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="MainCtrl.js"></script>
+    <script src="UserCtrl.js"></script>
+    <script src="RepoCtrl.js"></script>
+    <script src="github.js"></script>
+  </head>
 
-<body ng-controller="MainCtrl">
-  <h1>{{message}}</h1>
-  <form name="searchUser">
-    <input type="search" placeholder="enter username" ng-model="username" />
-    <input type="submit" ng-click="search(username)" />
-    <div>
-      username:{{user.login}}
-    </div>
-    <div class="images">
-      <img ng-src="{{user.avatar_url}}">
-    </div>
-  </form>
-</body>
+    <body>
+        <h1>Github Viewer</h1>
+        <div ng-view></div>
+    </body>
+
 
 </html>
